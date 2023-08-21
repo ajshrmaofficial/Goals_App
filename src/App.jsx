@@ -5,16 +5,14 @@ import {styleSheet, colors} from './Styles/styleSheet';
 import { useState } from 'react';
 
 function App(){
-    const [goals, setGoals] = useState(['Complete React Native course', 'Complete Redux course', 'Complete Node course']);
+    const [goals, setGoals] = useState([]);
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [goal, setGoal] = useState('');
-    // const [goalId, setGoalId] = useState(0);
 
     return(
         <View style={styleSheet.container}>
             <StatusBar backgroundColor={colors.primary}/>
-            <GoalInput props={{isModalVisible, setIsModalVisible}}/>
-            <GoalList props={{isModalVisible, setIsModalVisible, goals}}/>
+            <GoalInput props={{isModalVisible, setIsModalVisible, goals, setGoals}}/>
+            <GoalList props={{isModalVisible, setIsModalVisible, goals, setGoals}}/>
         </View>
     )
 }
